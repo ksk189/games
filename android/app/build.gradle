@@ -1,0 +1,70 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services' // Firebase plugin
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode') ?: '1'
+def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '1.0'
+
+android {
+    namespace "com.example.games"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.games"
+        minSdkVersion 23 // Ensure this is compatible with your libraries
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    buildTypes {
+       release {
+        // Enable code shrinking and resource shrinking for production builds
+        minifyEnabled true // This should be true to allow resource shrinking
+        shrinkResources true // Enable resource shrinking
+        
+        // Use ProGuard rules for optimization
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        // Replace with your actual release signing config for production
+        signingConfig signingConfigs.debug // For testing; replace for production
+    }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth:21.0.0' // Ensure compatibility with your minSdkVersion
+}
+
+// Apply Google Services JSON for Firebase
+apply plugin: 'com.google.gms.google-services'

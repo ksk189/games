@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "436876680463",
+    "project_id": "games-50229",
+    "storage_bucket": "games-50229.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436876680463:android:05f5ecc165b013313a327a",
+        "android_client_info": {
+          "package_name": "com.example.games"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436876680463-6ga0cr2sq4hrl19s32oobtp3aoij4doi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.games",
+            "certificate_hash": "ed0a0db119046d5f8b499fa5573e9563a6c04e39"
+          }
+        },
+        {
+          "client_id": "436876680463-1pdvm81agnuv3f9dg754v5e7kfanmc00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwd96gyBm71szGcB0I7aVjea_MHilWtGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436876680463-1pdvm81agnuv3f9dg754v5e7kfanmc00.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "436876680463-c2fd1iss3d7ddssd575gnm6qjrq726i3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.games"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
